@@ -6,7 +6,8 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "search": {
       "type": "search-header",
@@ -112,10 +113,6 @@
               },
               "blocks": {}
             },
-            "product-brand": {
-              "type": "_product-brand",
-              "name": "Brand"
-            },
             "product_title_j7qXTx": {
               "type": "product-title",
               "name": "t:names.product_title",
@@ -139,6 +136,12 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
+              "blocks": {}
+            },
+            "product-brand": {
+              "type": "_product-brand",
+              "name": "Brand",
+              "settings": {},
               "blocks": {}
             },
             "price_fYkUgG": {
@@ -167,8 +170,8 @@
           },
           "block_order": [
             "product_card_gallery_cFExAi",
-            "product-brand",
             "product_title_j7qXTx",
+            "product-brand",
             "price_fYkUgG"
           ]
         }
@@ -177,6 +180,8 @@
         "layout_type": "grid",
         "product_card_size": "medium",
         "mobile_product_card_size": "small",
+        "enable_infinite_scroll": true,
+        "products_per_page": 24,
         "product_grid_width": "centered",
         "full_width_on_mobile": true,
         "columns_gap_horizontal": 16,
