@@ -17,7 +17,7 @@
         "announcement_CNBpCK": {
           "type": "_announcement",
           "settings": {
-            "text": "<strong>We’re Live & Feeling Generous  —  ENJOY 10% Off All Orders Until May 4th</strong>",
+            "text": "<strong>We’re Live & Feeling Generous  —  ENJOY 10% Off Until May 4th</strong>",
             "link": "",
             "font": "var(--font-body--family)",
             "font_size": "1rem",
