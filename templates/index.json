@@ -319,7 +319,7 @@
         "icons_shape": "circle",
         "slideshow_controls_style": "none",
         "autoplay": true,
-        "autoplay_speed": 4,
+        "autoplay_speed": 5,
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -459,7 +459,7 @@
             "placement": "below_image",
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
-            "collection_card_gap": 15,
+            "collection_card_gap": 10,
             "inherit_color_scheme": true,
             "color_scheme": "",
             "border": "none",
@@ -527,12 +527,12 @@
           "books",
           "kitchen-living"
         ],
-        "layout_type": "carousel",
+        "layout_type": "grid",
         "carousel_on_mobile": false,
         "columns": 4,
         "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
-        "columns_gap": 40,
+        "mobile_card_size": "44cqw",
+        "columns_gap": 30,
         "bento_gap": 8,
         "rows_gap": 8,
         "max_collections": 4,
