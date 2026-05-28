@@ -192,7 +192,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p><strong>Looktwice Lifestore</strong><br/>12 Lower Goat Lane<br/>Norwich<br/>NR2 1EL<br/>United Kingdom</p><p><a href=\"mailto:hello@looktwice.co.uk\" target=\"_blank\" title=\"mailto:hello@looktwice.co.uk\">hello@looktwice.co.uk</a></p><p><a href=\"https://www.instagram.com/looktwice.store\" target=\"_blank\" title=\"https://www.instagram.com/looktwice.store\">@looktwice.store</a></p><p></p>",
+            "text": "<p><strong>Looktwice Lifestore</strong><br/>12 Lower Goat Lane<br/>Norwich, NR2 1EL<br/>United Kingdom</p><p><a href=\"mailto:hello@looktwice.co.uk\" target=\"_blank\" title=\"mailto:hello@looktwice.co.uk\">hello@looktwice.co.uk</a></p><p><a href=\"https://www.instagram.com/looktwice.store\" target=\"_blank\" title=\"https://www.instagram.com/looktwice.store\">@looktwice.store</a></p><p><a href=\"/pages/submissions\" title=\"Submissions\">Submissions</a></p><p></p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
