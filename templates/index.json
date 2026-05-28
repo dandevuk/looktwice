@@ -40,7 +40,7 @@
             "text_RhttYG": {
               "type": "text",
               "settings": {
-                "text": "<h1><strong>SUBMISSIONS OPEN NOW...</strong></h1>",
+                "text": "<h1><strong>SUBMISSIONS NOW OPEN...</strong></h1>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -90,7 +90,7 @@
       "name": "t:names.hero_marquee",
       "settings": {
         "media_type_1": "image",
-        "image_1": "shopify://shop_images/Open_Call_Banner_9fbe80c5-29ab-4e59-9734-c267b6ba48d5.jpg",
+        "image_1": "shopify://shop_images/Open_Call_Banner.jpg",
         "media_type_2": "image",
         "stack_media_on_mobile": false,
         "custom_mobile_media": false,
@@ -107,7 +107,7 @@
         "vertical_alignment_flex_direction_column": "center",
         "gap": 32,
         "section_width": "page-width",
-        "section_height": "large",
+        "section_height": "full-screen",
         "section_height_custom": 50,
         "color_scheme": "scheme-5",
         "toggle_overlay": false,
@@ -169,6 +169,7 @@
         "text_YLPk4p",
         "button_H9gpTf"
       ],
+      "disabled": true,
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
@@ -192,7 +193,7 @@
         "section_height": "full-screen",
         "section_height_custom": 50,
         "color_scheme": "scheme-6",
-        "toggle_overlay": true,
+        "toggle_overlay": false,
         "overlay_color": "#12121247",
         "overlay_style": "solid",
         "gradient_direction": "to bottom",
