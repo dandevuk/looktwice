@@ -9,6 +9,117 @@
  */
 {
   "sections": {
+    "hero_z3x8qd": {
+      "type": "hero",
+      "blocks": {
+        "spacer_7jrPMT": {
+          "type": "spacer",
+          "settings": {
+            "size": "pixel",
+            "percent_size": 100,
+            "pixel_size": 24,
+            "custom_mobile_size": false,
+            "size_mobile": "percent",
+            "percent_size_mobile": 100,
+            "pixel_size_mobile": 120
+          },
+          "blocks": {}
+        },
+        "marquee_HWmffX": {
+          "type": "_marquee",
+          "settings": {
+            "movement_direction": "normal",
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "transparent_background": true,
+            "padding-block-start": 24,
+            "padding-block-end": 24,
+            "gap_between_elements": 24
+          },
+          "blocks": {
+            "text_RhttYG": {
+              "type": "text",
+              "settings": {
+                "text": "<h1><strong>SUBMISSIONS OPEN NOW...</strong></h1>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h1",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": true,
+                "background_color": "#000000",
+                "corner_radius": 24,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_RhttYG"
+          ]
+        },
+        "button_yRbVAa": {
+          "type": "button",
+          "settings": {
+            "label": "FIND OUT MORE",
+            "link": "shopify://pages/submissions",
+            "open_in_new_tab": false,
+            "style_class": "button",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "spacer_7jrPMT",
+        "marquee_HWmffX",
+        "button_yRbVAa"
+      ],
+      "name": "t:names.hero_marquee",
+      "settings": {
+        "media_type_1": "image",
+        "image_1": "shopify://shop_images/Open_Call_Banner_9fbe80c5-29ab-4e59-9734-c267b6ba48d5.jpg",
+        "media_type_2": "image",
+        "stack_media_on_mobile": false,
+        "custom_mobile_media": false,
+        "media_type_1_mobile": "image",
+        "media_type_2_mobile": "image",
+        "link": "",
+        "open_in_new_tab": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 32,
+        "section_width": "page-width",
+        "section_height": "large",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-5",
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "gradient",
+        "gradient_direction": "to top",
+        "blurred_reflection": false,
+        "reflection_opacity": 75,
+        "padding-block-start": 0,
+        "padding-block-end": 40
+      }
+    },
     "hero_jVaWmY": {
       "type": "hero",
       "blocks": {
@@ -16,7 +127,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p>Online shopping just got finer</p>",
+            "text": "<p>Submissions Now Open</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -42,10 +153,10 @@
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "OUR PRODUCTS",
+            "label": "FIND OUT MORE",
             "link": "shopify://collections/all-products",
             "open_in_new_tab": false,
-            "style_class": "button-secondary",
+            "style_class": "button",
             "width": "fit-content",
             "custom_width": 100,
             "width_mobile": "fit-content",
@@ -61,7 +172,7 @@
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
-        "image_1": "shopify://shop_images/LOOKTWICE_BANNER_1.jpg",
+        "image_1": "shopify://shop_images/Open_Call_Banner.jpg",
         "media_type_2": "image",
         "stack_media_on_mobile": false,
         "custom_mobile_media": false,
@@ -285,117 +396,6 @@
         "padding-block-end": 48
       }
     },
-    "hero_z3x8qd": {
-      "type": "hero",
-      "blocks": {
-        "spacer_7jrPMT": {
-          "type": "spacer",
-          "settings": {
-            "size": "pixel",
-            "percent_size": 100,
-            "pixel_size": 24,
-            "custom_mobile_size": false,
-            "size_mobile": "percent",
-            "percent_size_mobile": 100,
-            "pixel_size_mobile": 120
-          },
-          "blocks": {}
-        },
-        "marquee_HWmffX": {
-          "type": "_marquee",
-          "settings": {
-            "movement_direction": "normal",
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "transparent_background": true,
-            "padding-block-start": 24,
-            "padding-block-end": 24,
-            "gap_between_elements": 24
-          },
-          "blocks": {
-            "text_RhttYG": {
-              "type": "text",
-              "settings": {
-                "text": "<h1><strong>SUBMISSIONS OPEN NOW...</strong></h1>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h1",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": true,
-                "background_color": "#000000",
-                "corner_radius": 24,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_RhttYG"
-          ]
-        },
-        "button_yRbVAa": {
-          "type": "button",
-          "settings": {
-            "label": "FIND OUT MORE",
-            "link": "shopify://pages/submissions",
-            "open_in_new_tab": false,
-            "style_class": "button",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "spacer_7jrPMT",
-        "marquee_HWmffX",
-        "button_yRbVAa"
-      ],
-      "name": "t:names.hero_marquee",
-      "settings": {
-        "media_type_1": "image",
-        "image_1": "shopify://shop_images/Open_Call_Banner_9fbe80c5-29ab-4e59-9734-c267b6ba48d5.jpg",
-        "media_type_2": "image",
-        "stack_media_on_mobile": false,
-        "custom_mobile_media": false,
-        "media_type_1_mobile": "image",
-        "media_type_2_mobile": "image",
-        "link": "",
-        "open_in_new_tab": false,
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 32,
-        "section_width": "page-width",
-        "section_height": "large",
-        "section_height_custom": 50,
-        "color_scheme": "scheme-5",
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "gradient",
-        "gradient_direction": "to top",
-        "blurred_reflection": false,
-        "reflection_opacity": 75,
-        "padding-block-start": 0,
-        "padding-block-end": 40
-      }
-    },
     "1774282055bc206f16": {
       "type": "_blocks",
       "settings": {
@@ -458,9 +458,9 @@
     }
   },
   "order": [
+    "hero_z3x8qd",
     "hero_jVaWmY",
     "product_list_fa6P9H",
-    "hero_z3x8qd",
     "1774282055bc206f16",
     "17742821839adf2016"
   ]
