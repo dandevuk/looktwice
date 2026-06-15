@@ -83,6 +83,7 @@
         "text_YLPk4p": {
           "type": "text",
           "name": "t:names.heading",
+          "disabled": true,
           "settings": {
             "text": "<p>Submissions Now Open</p>",
             "width": "fit-content",
@@ -109,6 +110,7 @@
         "button_H9gpTf": {
           "type": "button",
           "name": "t:names.button",
+          "disabled": true,
           "settings": {
             "label": "FIND OUT MORE",
             "link": "shopify://pages/submissions",
@@ -129,13 +131,13 @@
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
-        "image_1": "shopify://shop_images/Open_Call_Banner.jpg",
+        "image_1": "shopify://shop_images/Fathers_Day_Banner.jpg",
         "media_type_2": "image",
         "stack_media_on_mobile": false,
         "custom_mobile_media": false,
         "media_type_1_mobile": "image",
         "media_type_2_mobile": "image",
-        "link": "",
+        "link": "shopify://collections/all-products",
         "open_in_new_tab": false,
         "content_direction": "column",
         "vertical_on_mobile": true,
