@@ -111,7 +111,7 @@
           "name": "t:names.button",
           "settings": {
             "label": "FIND OUT MORE",
-            "link": "shopify://collections/all-products",
+            "link": "shopify://pages/submissions",
             "open_in_new_tab": false,
             "style_class": "button",
             "width": "fit-content",
