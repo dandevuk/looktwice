@@ -43,6 +43,7 @@
         "spacer_7jrPMT",
         "marquee_HWmffX"
       ],
+      "disabled": true,
       "name": "t:names.hero_marquee",
       "settings": {
         "media_type_1": "image",
@@ -125,7 +126,6 @@
         "text_YLPk4p",
         "button_H9gpTf"
       ],
-      "disabled": true,
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
@@ -148,7 +148,7 @@
         "section_width": "full-width",
         "section_height": "full-screen",
         "section_height_custom": 50,
-        "color_scheme": "scheme-6",
+        "color_scheme": "scheme-58084d4c-a86e-4d0a-855e-a0966e5043f7",
         "toggle_overlay": false,
         "overlay_color": "#12121247",
         "overlay_style": "solid",
