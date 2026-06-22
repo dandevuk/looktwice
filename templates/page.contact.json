@@ -83,7 +83,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p><strong>Opening hours <br/></strong>Monday to Saturday 10am – 5pm<br/>Sundays 11am – 4pm<br/><br/></p><p><strong>Email<br/></strong>hello@looktwice.co.uk<br/><br/></p><p><strong>Looktwice Lifestore<br/></strong>12 Lower Goat Lane<br/>Norwich<br/>NR3 3BY<br/>United Kingdom</p><p></p>",
+            "text": "<p><strong>Opening hours <br/></strong>Monday to Saturday 10am – 5pm<br/>Sundays 11am – 4pm<br/><br/></p><p><strong>Email<br/></strong>hello@looktwice.co.uk<br/><br/></p><p><strong>Looktwice Lifestore<br/></strong>12 Lower Goat Lane<br/>Norwich NR2 1EL<br/>United Kingdom</p><p></p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
