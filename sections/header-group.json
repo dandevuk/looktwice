@@ -31,6 +31,7 @@
       "block_order": [
         "announcement_CNBpCK"
       ],
+      "disabled": true,
       "name": "t:names.announcement_bar",
       "settings": {
         "speed": 5,
@@ -61,7 +62,7 @@
             "menu": "main-menu",
             "color_scheme": "",
             "highlight_text": "sale",
-            "highlight_text_color": "#FD0303",
+            "highlight_text_color": "#fd0303",
             "type_font_primary_size": "0.875rem",
             "menu_font_style": "inverse",
             "type_font_primary_link": "body",
