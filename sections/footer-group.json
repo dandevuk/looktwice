@@ -220,7 +220,7 @@
           "settings": {
             "horizontal_alignment": "center",
             "gap": 20,
-            "padding-block-start": 40,
+            "padding-block-start": 35,
             "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
@@ -267,10 +267,10 @@
         "social_links_Ew63Kq": {
           "type": "social-links",
           "settings": {
-            "facebook_url": "",
+            "facebook_url": "https://www.facebook.com/profile.php?id=61589341412788&utm_source=emailoctopus&utm_medium=email&utm_campaign=Summer%20Sale",
             "instagram_url": "https://www.instagram.com/looktwice.store",
             "youtube_url": "",
-            "tiktok_url": "",
+            "tiktok_url": "https://www.tiktok.com/@looktwice.store?utm_source=emailoctopus&utm_medium=email&utm_campaign=Summer%20Sale",
             "twitter_url": "",
             "threads_url": "",
             "linkedin_url": "",
@@ -295,7 +295,7 @@
         "gap": 24,
         "divider_thickness": 0,
         "color_scheme": "",
-        "padding-block-start": 40,
+        "padding-block-start": 20,
         "padding-block-end": 40
       }
     }
