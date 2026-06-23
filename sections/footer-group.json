@@ -213,13 +213,27 @@
             "padding-inline-end": 0
           },
           "blocks": {}
+        },
+        "payment_icons_hUTW6c": {
+          "type": "payment-icons",
+          "name": "t:names.payment_icons",
+          "settings": {
+            "horizontal_alignment": "center",
+            "gap": 20,
+            "padding-block-start": 40,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "group_H6VpwJ",
         "text_WRFn7d",
         "text_ezm89E",
-        "text_QhQTHL"
+        "text_QhQTHL",
+        "payment_icons_hUTW6c"
       ],
       "name": "t:names.footer",
       "settings": {
