@@ -525,7 +525,7 @@
           "lighting",
           "candles-fragrance",
           "books",
-          "kitchen-living"
+          "kitchenware"
         ],
         "layout_type": "grid",
         "carousel_on_mobile": false,
