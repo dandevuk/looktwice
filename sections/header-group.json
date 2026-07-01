@@ -17,7 +17,7 @@
         "announcement_CNBpCK": {
           "type": "_announcement",
           "settings": {
-            "text": "<strong>Rainy days discount  —  ENJOY 10% Off everything</strong>",
+            "text": "<strong>FREE UK SHIPPING (MAINLAND) ON ORDERS OVER £50</strong>",
             "link": "",
             "font": "var(--font-body--family)",
             "font_size": "1rem",
@@ -31,7 +31,6 @@
       "block_order": [
         "announcement_CNBpCK"
       ],
-      "disabled": true,
       "name": "t:names.announcement_bar",
       "settings": {
         "speed": 5,
