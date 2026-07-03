@@ -17,7 +17,7 @@
         "announcement_CNBpCK": {
           "type": "_announcement",
           "settings": {
-            "text": "Free UK mainland shipping on orders over £50",
+            "text": "Free UK mainland shipping on orders over £30",
             "link": "",
             "font": "var(--font-body--family)",
             "font_size": "0.875rem",
