@@ -551,6 +551,12 @@
               },
               "blocks": {}
             },
+            "product_brand_tNptHW": {
+              "type": "_product-brand",
+              "name": "Brand",
+              "settings": {},
+              "blocks": {}
+            },
             "price_JQzVV4": {
               "type": "price",
               "name": "t:names.product_price",
@@ -578,6 +584,7 @@
           "block_order": [
             "product_card_gallery_677WP3",
             "product_title_YXxMTj",
+            "product_brand_tNptHW",
             "price_JQzVV4"
           ]
         }
