@@ -81,7 +81,7 @@
             "text_f9CFLH": {
               "type": "text",
               "settings": {
-                "text": "<p>Subscribe to the Looktwice newsletter for a first look at our new arrivals, exclusive offers and upcoming events. </p>",
+                "text": "<p>Subscribe to the Looktwice newsletter for first dibs on our new arrivals, exclusive offers, and upcoming events. </p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -192,7 +192,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p><strong>Looktwice Lifestore</strong><br/>12 Lower Goat Lane<br/>Norwich<br/>NR2 1EL<br/>United Kingdom</p><p><a href=\"mailto:hello@looktwice.co.uk\" target=\"_blank\" title=\"mailto:hello@looktwice.co.uk\">hello@looktwice.co.uk</a></p><p><a href=\"https://www.instagram.com/looktwice.store\" target=\"_blank\" title=\"https://www.instagram.com/looktwice.store\">@looktwice.store</a></p><p></p>",
+            "text": "<p><strong>Looktwice Lifestore</strong><br/>12 Lower Goat Lane<br/>Norwich, NR2 1EL<br/>United Kingdom</p><p><a href=\"mailto:hello@looktwice.co.uk\" target=\"_blank\" title=\"mailto:hello@looktwice.co.uk\">hello@looktwice.co.uk</a></p><p><a href=\"/pages/submissions\" title=\"Submissions\">Submissions</a></p><p><a href=\"/pages/contact\" title=\"Contact\">Contact Us</a></p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -213,13 +213,27 @@
             "padding-inline-end": 0
           },
           "blocks": {}
+        },
+        "payment_icons_hUTW6c": {
+          "type": "payment-icons",
+          "name": "t:names.payment_icons",
+          "settings": {
+            "horizontal_alignment": "center",
+            "gap": 20,
+            "padding-block-start": 35,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "group_H6VpwJ",
         "text_WRFn7d",
         "text_ezm89E",
-        "text_QhQTHL"
+        "text_QhQTHL",
+        "payment_icons_hUTW6c"
       ],
       "name": "t:names.footer",
       "settings": {
@@ -253,10 +267,10 @@
         "social_links_Ew63Kq": {
           "type": "social-links",
           "settings": {
-            "facebook_url": "",
+            "facebook_url": "https://www.facebook.com/profile.php?id=61589341412788&utm_source=emailoctopus&utm_medium=email&utm_campaign=Summer%20Sale",
             "instagram_url": "https://www.instagram.com/looktwice.store",
             "youtube_url": "",
-            "tiktok_url": "",
+            "tiktok_url": "https://www.tiktok.com/@looktwice.store?utm_source=emailoctopus&utm_medium=email&utm_campaign=Summer%20Sale",
             "twitter_url": "",
             "threads_url": "",
             "linkedin_url": "",
@@ -281,7 +295,7 @@
         "gap": 24,
         "divider_thickness": 0,
         "color_scheme": "",
-        "padding-block-start": 40,
+        "padding-block-start": 20,
         "padding-block-end": 40
       }
     }
