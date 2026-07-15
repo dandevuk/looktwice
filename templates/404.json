@@ -197,6 +197,10 @@
               },
               "blocks": {}
             },
+            "product-brand": {
+              "type": "_product-brand",
+              "name": "Brand"
+            },
             "product_title_83YMDL": {
               "type": "product-title",
               "name": "t:names.product_title",
@@ -215,7 +219,7 @@
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 4,
+                "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
@@ -248,6 +252,7 @@
           },
           "block_order": [
             "product_card_gallery_wxYqE3",
+            "product-brand",
             "product_title_83YMDL",
             "price_A6DYPt"
           ]
