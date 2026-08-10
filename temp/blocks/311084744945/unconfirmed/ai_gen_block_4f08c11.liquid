@@ -1,6 +1,579 @@
+{% doc %}
+  @prompt
+    Create a promotional discount offer popup that appears after a short delay when a visitor lands on the page. The popup should include a headline, a short promotional message, a discount code displayed prominently, and a call-to-action button. It should have a close button, be visually styled to match a premium lifestyle brand with clean minimal design, and not show again once dismissed (using localStorage). All text and the discount code should be customizable via theme editor settings.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-promo-popup-{{ ai_gen_id }} {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .ai-promo-popup-{{ ai_gen_id }}.active {
+    display: flex;
+  }
+
+  .ai-promo-popup-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: {{ block.settings.overlay_color }};
+    opacity: {{ block.settings.overlay_opacity | divided_by: 100.0 }};
+  }
+
+  .ai-promo-popup-content-{{ ai_gen_id }} {
+    position: relative;
+    background-color: {{ block.settings.popup_background }};
+    border-radius: {{ block.settings.border_radius }}px;
+    max-width: {{ block.settings.popup_width }}px;
+    width: 100%;
+    padding: {{ block.settings.padding }}px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .ai-promo-popup-{{ ai_gen_id }}.active .ai-promo-popup-content-{{ ai_gen_id }} {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .ai-promo-popup-close-{{ ai_gen_id }} {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+    line-height: 1;
+  }
+
+  .ai-promo-popup-close-{{ ai_gen_id }}:hover {
+    opacity: 1;
+  }
+
+  .ai-promo-popup-close-{{ ai_gen_id }} svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+  }
+
+  .ai-promo-popup-headline-{{ ai_gen_id }} {
+    color: {{ block.settings.headline_color }};
+    font-size: {{ block.settings.headline_size }}px;
+    font-weight: 700;
+    margin: 0 0 16px;
+    line-height: 1.2;
+  }
+
+  .ai-promo-popup-message-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.text_size }}px;
+    line-height: 1.5;
+    margin: 0 0 24px;
+  }
+
+  .ai-promo-popup-code-wrapper-{{ ai_gen_id }} {
+    background-color: {{ block.settings.code_background }};
+    border: {{ block.settings.code_border_width }}px {{ block.settings.code_border_style }} {{ block.settings.code_border_color }};
+    border-radius: {{ block.settings.code_border_radius }}px;
+    padding: 16px 24px;
+    margin: 0 0 24px;
+  }
+
+  .ai-promo-popup-code-label-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 8px;
+    opacity: 0.7;
+  }
+
+  .ai-promo-popup-code-{{ ai_gen_id }} {
+    color: {{ block.settings.code_text_color }};
+    font-size: {{ block.settings.code_size }}px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0;
+    font-family: monospace;
+  }
+
+  .ai-promo-popup-button-{{ ai_gen_id }} {
+    display: inline-block;
+    background-color: {{ block.settings.button_background }};
+    color: {{ block.settings.button_text_color }};
+    padding: 14px 32px;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    text-decoration: none;
+    font-size: {{ block.settings.button_text_size }}px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .ai-promo-popup-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_background }};
+    color: {{ block.settings.button_hover_text_color }};
+    transform: translateY(-1px);
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-promo-popup-content-{{ ai_gen_id }} {
+      padding: {{ block.settings.padding | times: 0.7 }}px;
+    }
+
+    .ai-promo-popup-headline-{{ ai_gen_id }} {
+      font-size: {{ block.settings.headline_size | times: 0.8 }}px;
+    }
+
+    .ai-promo-popup-code-{{ ai_gen_id }} {
+      font-size: {{ block.settings.code_size | times: 0.8 }}px;
+    }
+  }
+{% endstyle %}
+
+<promo-popup-{{ ai_gen_id }}
+  class="ai-promo-popup-{{ ai_gen_id }}"
+  data-delay="{{ block.settings.delay }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-promo-popup-overlay-{{ ai_gen_id }}"></div>
+  <div class="ai-promo-popup-content-{{ ai_gen_id }}">
+    <button
+      class="ai-promo-popup-close-{{ ai_gen_id }}"
+      aria-label="Close popup"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    {% if block.settings.headline != blank %}
+      <h2 class="ai-promo-popup-headline-{{ ai_gen_id }}">
+        {{ block.settings.headline }}
+      </h2>
+    {% endif %}
+
+    {% if block.settings.message != blank %}
+      <div class="ai-promo-popup-message-{{ ai_gen_id }}">
+        {{ block.settings.message }}
+      </div>
+    {% endif %}
+
+    {% if block.settings.discount_code != blank %}
+      <div class="ai-promo-popup-code-wrapper-{{ ai_gen_id }}">
+        {% if block.settings.code_label != blank %}
+          <p class="ai-promo-popup-code-label-{{ ai_gen_id }}">
+            {{ block.settings.code_label }}
+          </p>
+        {% endif %}
+        <p class="ai-promo-popup-code-{{ ai_gen_id }}">
+          {{ block.settings.discount_code }}
+        </p>
+      </div>
+    {% endif %}
+
+    {% if block.settings.button_text != blank %}
+      <a
+        href="{{ block.settings.button_link }}"
+        class="ai-promo-popup-button-{{ ai_gen_id }}"
+      >
+        {{ block.settings.button_text }}
+      </a>
+    {% endif %}
+  </div>
+</promo-popup-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class PromoPopup{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.storageKey = 'ai-promo-popup-dismissed-{{ ai_gen_id }}';
+      }
+
+      connectedCallback() {
+        if (this.hasBeenDismissed()) {
+          return;
+        }
+
+        const delay = parseInt(this.dataset.delay) || 2000;
+        
+        setTimeout(() => {
+          this.showPopup();
+        }, delay);
+
+        this.setupEventListeners();
+      }
+
+      hasBeenDismissed() {
+        try {
+          return localStorage.getItem(this.storageKey) === 'true';
+        } catch (e) {
+          return false;
+        }
+      }
+
+      showPopup() {
+        this.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      hidePopup() {
+        this.classList.remove('active');
+        document.body.style.overflow = '';
+        this.markAsDismissed();
+      }
+
+      markAsDismissed() {
+        try {
+          localStorage.setItem(this.storageKey, 'true');
+        } catch (e) {
+          console.warn('localStorage not available');
+        }
+      }
+
+      setupEventListeners() {
+        const closeButton = this.querySelector('.ai-promo-popup-close-{{ ai_gen_id }}');
+        const overlay = this.querySelector('.ai-promo-popup-overlay-{{ ai_gen_id }}');
+        const ctaButton = this.querySelector('.ai-promo-popup-button-{{ ai_gen_id }}');
+
+        if (closeButton) {
+          closeButton.addEventListener('click', () => {
+            this.hidePopup();
+          });
+        }
+
+        if (overlay) {
+          overlay.addEventListener('click', () => {
+            this.hidePopup();
+          });
+        }
+
+        if (ctaButton) {
+          ctaButton.addEventListener('click', () => {
+            this.markAsDismissed();
+          });
+        }
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && this.classList.contains('active')) {
+            this.hidePopup();
+          }
+        });
+      }
+    }
+
+    customElements.define('promo-popup-{{ ai_gen_id }}', PromoPopup{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Promotional popup",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Welcome to our store"
+    },
+    {
+      "type": "richtext",
+      "id": "message",
+      "label": "Message",
+      "default": "<p>Get 15% off your first order with the code below</p>"
+    },
+    {
+      "type": "text",
+      "id": "code_label",
+      "label": "Code label",
+      "default": "Use code"
+    },
+    {
+      "type": "text",
+      "id": "discount_code",
+      "label": "Discount code",
+      "default": "WELCOME15"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Behavior"
+    },
+    {
+      "type": "range",
+      "id": "delay",
+      "label": "Delay before showing",
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "unit": "s",
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Popup style"
+    },
+    {
+      "type": "range",
+      "id": "popup_width",
+      "label": "Width",
+      "min": 300,
+      "max": 600,
+      "step": 20,
+      "unit": "px",
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "Padding",
+      "min": 20,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "popup_background",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Headline"
+    },
+    {
+      "type": "range",
+      "id": "headline_size",
+      "label": "Size",
+      "min": 18,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "headline_color",
+      "label": "Color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Message"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Discount code"
+    },
+    {
+      "type": "range",
+      "id": "code_size",
+      "label": "Size",
+      "min": 16,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "code_text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "code_background",
+      "label": "Background",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "select",
+      "id": "code_border_style",
+      "label": "Border style",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "dashed",
+          "label": "Dashed"
+        }
+      ],
+      "default": "dashed"
+    },
+    {
+      "type": "range",
+      "id": "code_border_width",
+      "label": "Border width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "code_border_color",
+      "label": "Border color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "code_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 16,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "label": "Text size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background",
+      "label": "Hover background",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promotional popup"
+    }
+  ]
+}
 {% endschema %}
